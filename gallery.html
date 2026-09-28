@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Car Gallery & 3D Showroom | Global Trade Japan Car Import</title>
+<meta name="description" content="Explore our 3D car showroom and gallery. Rotate the car, change the paint colour and view studio renders of exterior and detail shots before you request your car from Japan.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Global Trade">
+<meta property="og:title" content="Car Gallery & 3D Showroom | Global Trade Japan Car Import">
+<meta property="og:description" content="Explore our 3D car showroom and gallery. Rotate the car, change the paint colour and view studio renders of exterior and detail shots before you request your car from Japan.">
+<meta property="og:image" content="logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E2B47">
+<link rel="icon" href="emblem.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ImageGallery",
+ "name": "Global Trade car gallery",
+ "image": [
+  {
+   "@type": "ImageObject",
+   "contentUrl": "exterior-front-red.webp",
+   "caption": "Front three-quarter view in deep red"
+  },
+  {
+   "@type": "ImageObject",
+   "contentUrl": "exterior-side-blue.webp",
+   "caption": "Side profile in steel blue"
+  },
+  {
+   "@type": "ImageObject",
+   "contentUrl": "exterior-rear-white.webp",
+   "caption": "Rear three-quarter view in pearl white"
+  },
+  {
+   "@type": "ImageObject",
+   "contentUrl": "exterior-top-copper.webp",
+   "caption": "Top view in copper"
+  },
+  {
+   "@type": "ImageObject",
+   "contentUrl": "exterior-front-black.webp",
+   "caption": "Front view in midnight black"
+  },
+  {
+   "@type": "ImageObject",
+   "contentUrl": "exterior-front-steel.webp",
+   "caption": "Front three-quarter view in steel blue"
+  },
+  {
+   "@type": "ImageObject",
+   "contentUrl": "detail-wheel.webp",
+   "caption": "Alloy wheel and brake detail"
+  },
+  {
+   "@type": "ImageObject",
+   "contentUrl": "detail-headlight.webp",
+   "caption": "LED headlight and front intake"
+  },
+  {
+   "@type": "ImageObject",
+   "contentUrl": "detail-rear.webp",
+   "caption": "Rear lights and diffuser"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Gallery",
+   "item": "gallery.html"
+  }
+ ]
+}
+</script>
+</head>
+<body data-page="gallery">
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Global Trade home">
+      <img src="emblem.webp" alt="" width="60" height="49">
+      <span class="wm"><b>GLOBAL TRADE</b><i></i></span>
+    </a>
+    <nav id="mainNav" aria-label="Main">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="import-cars-from-japan.html" data-page="import">Import from Japan</a>
+      <a href="gallery.html" data-page="gallery">Gallery</a>
+      <a href="about.html" data-page="about">About Us</a>
+      <a href="contact.html" data-page="contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-navy" href="contact.html#request">Get a quote</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="wrap">
+        <ol class="crumbs"><li><a href="index.html">Home</a></li><li aria-current="page">Gallery</li></ol>
+        <p class="eyebrow">Gallery & 3D showroom</p>
+        <h1>See the car <span>from every angle</span></h1>
+        <p class="lead">Rotate the car in our 3D showroom, try different paint colours, and browse studio renders. When you request a real car, we send you its actual auction photos and sheet.</p>
+        
+  </div>
+</section>
+
+<main>
+  <section style="padding-bottom:0">
+    <div class="wrap">
+      <div class="stage tall" id="carStage" aria-label="3D car showroom. Drag to rotate.">
+        <canvas id="car3d"></canvas>
+        <div class="loading" id="carLoading">Loading showroom</div>
+        <div class="chip c1">Auction grade<b>4.5 / A</b></div>
+        <div class="chip c2">Mileage<b>21,400 km</b></div>
+        <div class="paint" role="group" aria-label="Paint colour">
+          <span>Paint</span>
+          <button type="button" data-c="#8E1B24" style="background:#8E1B24" aria-pressed="true" aria-label="Deep red"></button>
+          <button type="button" data-c="#3E6E95" style="background:#3E6E95" aria-pressed="false" aria-label="Steel blue"></button>
+          <button type="button" data-c="#E8E8E6" style="background:#E8E8E6" aria-pressed="false" aria-label="Pearl white"></button>
+          <button type="button" data-c="#B8743F" style="background:#B8743F" aria-pressed="false" aria-label="Copper"></button>
+          <button type="button" data-c="#121820" style="background:#121820" aria-pressed="false" aria-label="Midnight black"></button>
+        </div>
+        <div class="hint">DRAG TO ROTATE</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Studio renders</p>
+        <h2>Gallery</h2>
+        <p>Tap any image to view it larger.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter gallery">
+        <button type="button" data-f="all" aria-pressed="true">All</button>
+        <button type="button" data-f="exterior" aria-pressed="false">Exterior</button>
+        <button type="button" data-f="details" aria-pressed="false">Details</button>
+      </div>
+      <div class="gallery" id="galleryGrid">
+        <figure class="shot" data-cat="exterior"><img src="exterior-front-red.webp" alt="Front three-quarter view in deep red — 3D studio render" loading="lazy" width="1200" height="750"><figcaption><span>Front three-quarter view in deep red</span></figcaption></figure>
+        <figure class="shot" data-cat="exterior"><img src="exterior-side-blue.webp" alt="Side profile in steel blue — 3D studio render" loading="lazy" width="1200" height="750"><figcaption><span>Side profile in steel blue</span></figcaption></figure>
+        <figure class="shot" data-cat="exterior"><img src="exterior-rear-white.webp" alt="Rear three-quarter view in pearl white — 3D studio render" loading="lazy" width="1200" height="750"><figcaption><span>Rear three-quarter view in pearl white</span></figcaption></figure>
+        <figure class="shot" data-cat="exterior"><img src="exterior-top-copper.webp" alt="Top view in copper — 3D studio render" loading="lazy" width="1200" height="750"><figcaption><span>Top view in copper</span></figcaption></figure>
+        <figure class="shot" data-cat="exterior"><img src="exterior-front-black.webp" alt="Front view in midnight black — 3D studio render" loading="lazy" width="1200" height="750"><figcaption><span>Front view in midnight black</span></figcaption></figure>
+        <figure class="shot" data-cat="exterior"><img src="exterior-front-steel.webp" alt="Front three-quarter view in steel blue — 3D studio render" loading="lazy" width="1200" height="750"><figcaption><span>Front three-quarter view in steel blue</span></figcaption></figure>
+        <figure class="shot" data-cat="details"><img src="detail-wheel.webp" alt="Alloy wheel and brake detail — 3D studio render" loading="lazy" width="1200" height="750"><figcaption><span>Alloy wheel and brake detail</span></figcaption></figure>
+        <figure class="shot" data-cat="details"><img src="detail-headlight.webp" alt="LED headlight and front intake — 3D studio render" loading="lazy" width="1200" height="750"><figcaption><span>LED headlight and front intake</span></figcaption></figure>
+        <figure class="shot" data-cat="details"><img src="detail-rear.webp" alt="Rear lights and diffuser — 3D studio render" loading="lazy" width="1200" height="750"><figcaption><span>Rear lights and diffuser</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="note">
+        <div>
+          <h3 style="font-size:22px;margin-bottom:6px">Want to see real cars at auction this week?</h3>
+          <p>Send us the model you want. We reply with live auction cars, their real photos and translated auction sheets.</p>
+        </div>
+        <a class="btn btn-copper" data-wa="Hello Global Trade, please send me live auction options." href="#" target="_blank" rel="noopener">Get live options on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER DELIVERIES: add real delivery photos here once customers give permission.
+  <section style="padding-top:0"><div class="wrap"><div class="sec-head"><p class="eyebrow">Delivered to customers</p><h2>Recent deliveries</h2></div>
+    <div class="gallery">
+      <figure class="shot" data-cat="delivered"><img src="delivery-1.webp" alt="Toyota Prado delivered to Karachi" loading="lazy"><figcaption><span>Toyota Prado · Karachi</span></figcaption></figure>
+    </div></div></section>
+  -->
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="band">
+        <h2>Found the style you like? Tell us the model.</h2>
+        <a class="btn btn-copper" href="contact.html#request">Request a car →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button type="button" id="lbClose">Close ✕</button>
+  <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a class="logo-box" href="index.html"><img src="logo.webp" alt="Global Trade logo" width="107" height="64"></a>
+        <p>Japanese used car exporter. Tell us the car you want and we source it from Japanese auctions, check the auction sheet, and ship it to your port.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="import-cars-from-japan.html">Import from Japan</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Import service</h4>
+        <ul>
+          <li><a href="import-cars-from-japan.html#process">How importing works</a></li>
+          <li><a href="import-cars-from-japan.html#costs">What the price includes</a></li>
+          <li><a href="import-cars-from-japan.html#countries">Countries we ship to</a></li>
+          <li><a href="import-cars-from-japan.html#auction-sheet">Auction sheet grades</a></li>
+          <li><a href="import-cars-from-japan.html#faq">Import FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>WhatsApp: <span data-contact="whatsapp"></span></li>
+          <li>Phone: <span data-contact="phone"></span></li>
+          <li>Email: <span data-contact="email"></span></li>
+          <li><span data-contact="address"></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 株式会社 Global Trade. All rights reserved.</span>
+      <span>Japanese used car export · Auction sourcing · Worldwide shipping</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="main.js"></script>
+<script src="car-model.js"></script>
+<script src="showroom.js"></script>
+</body>
+</html>
